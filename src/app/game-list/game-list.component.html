@@ -1,0 +1,12 @@
+<div *ngFor="let item of items; let i=index">
+
+    <div>id: {{ item.id}}</div>
+    <div>name: {{ item.name}}</div>
+    <div>descrizione: {{ item.descrizione}}</div>
+    <div>genere: {{ item.genere}}</div>
+    <div>rating: {{ item.rating}}</div>
+    <div>prezzo: {{ item.prezzo}}</div>
+    <div>annoUscita: {{ item.annoUscita}}</div>
+    <div *ngIf="i!=items.length-1">-------------</div>
+
+</div>

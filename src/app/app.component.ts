@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { GameItem } from './gameItem';
+import { ListGameService } from './list.game.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Sito gaming';
+  items: GameItem[] = [];
+
+
+  constructor(private listService: ListGameService){
+
+    this.items = listService.getGameItemList();
+  }
+
 }

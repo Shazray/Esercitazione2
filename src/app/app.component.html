@@ -1,6 +1,6 @@
 <app-menu></app-menu>
 <div [ngSwitch]="currentSection">
     <app-home *ngSwitchCase="'home'"></app-home>
-    <game-list *ngSwitchCase="'list'" [items]="items"></game-list>
+    <app-list *ngSwitchCase="'list'"></app-list>
     <app-detail *ngSwitchCase="'detail'"></app-detail>
 </div>

@@ -1,8 +1,8 @@
 import { GameItem } from "../gameItem";
 
 
-
 export class ListGameService{
+
     getGameItemList(): GameItem[] {
         let items: GameItem[] = [];
         items.push(new GameItem(1));

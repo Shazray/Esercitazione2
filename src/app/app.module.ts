@@ -9,6 +9,7 @@ import { GameDetailComponent } from './Components/game-detail/game-detail.compon
 import { HomeComponentComponent } from './Components/home-component/home-component.component';
 import { MenuComponent } from './Components/menu/menu.component';
 import { MenuService } from './Services/menu.service';
+import { ListGameService } from './Services/list.game.service';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { MenuService } from './Services/menu.service';
     BrowserModule,
     FormsModule
   ],
-  providers: [MenuService],
+  providers: [MenuService, ListGameService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

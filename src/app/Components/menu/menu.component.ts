@@ -5,9 +5,10 @@ import { MenuEnum } from '../../menuEnum';
 
 @Component({
   selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  templateUrl: '../../Components/menu/menu.component.html',
+  styleUrls: ['../../Components/menu/menu.component.css']
 })
+
 export class MenuComponent implements OnInit {
 
   menuItems: MenuItem[] = [
@@ -16,9 +17,7 @@ export class MenuComponent implements OnInit {
     new MenuItem(MenuEnum.Detail, 'Dettaglio'),
     new MenuItem(MenuEnum.Edit, 'Modifica')
   ];
-  constructor(private menuService: MenuService) { 
-   
-        }
+  constructor(private menuService: MenuService) {}
 
   ngOnInit() {
   }

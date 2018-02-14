@@ -1,4 +1,6 @@
-import { GameItem } from "./gameItem";
+import { GameItem } from "../gameItem";
+
+
 
 export class ListGameService{
     getGameItemList(): GameItem[] {

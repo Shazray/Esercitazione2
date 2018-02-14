@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { GameItem } from '../gameItem';
+import { GameItem } from '../../gameItem';
 
 @Component({
   selector: 'game-list',
@@ -13,7 +13,4 @@ export class GameListComponent {
   items: GameItem[] = [];
 
   constructor() { }
-
-  
-
 }

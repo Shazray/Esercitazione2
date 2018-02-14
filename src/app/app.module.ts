@@ -4,24 +4,26 @@ import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import { MenuComponentComponent } from './menu-component/menu-component.component';
-import { GameListComponent } from './game-list/game-list.component';
-import { GameDetailComponent } from './game-detail/game-detail.component';
-import { ListGameService } from './list.game.service';
+import { GameListComponent } from './Components/game-list/game-list.component';
+import { GameDetailComponent } from './Components/game-detail/game-detail.component';
+import { HomeComponentComponent } from './Components/home-component/home-component.component';
+import { MenuComponent } from './Components/menu/menu.component';
+import { MenuService } from './Services/menu.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponentComponent,
     GameListComponent,
-    GameDetailComponent
+    GameDetailComponent,
+    HomeComponentComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [ListGameService],
+  providers: [MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

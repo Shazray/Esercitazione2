@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { GameItem } from './gameItem';
-import { ListGameService } from './list.game.service';
+import { MenuEnum } from './menuEnum';
+import { MenuService } from './Services/menu.service';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +8,12 @@ import { ListGameService } from './list.game.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Sito gaming';
-  items: GameItem[] = [];
+  currentSection = MenuEnum.Home;
 
-
-  constructor(private listService: ListGameService){
-
-    this.items = listService.getGameItemList();
+  constructor(private menuService: MenuService){
+    this.menuService.sectionSelected$.subscribe(id=>{
+      this.currentSection = id;
+    });
   }
 
 }

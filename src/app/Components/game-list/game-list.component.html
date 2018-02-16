@@ -1,4 +1,7 @@
-<div *ngFor="let item of items; let i=index">
+<div>
+    <h2 style="text-align: center">Lista videogiochi</h2>
+</div>
+<div *ngFor="let item of items; let i=index" class="list">
 
     <div>id: {{ item.id}}</div>
     <div>name: {{ item.name}}</div>
@@ -7,6 +10,7 @@
     <div>rating: {{ item.rating}}</div>
     <div>prezzo: {{ item.prezzo}}</div>
     <div>annoUscita: {{ item.annoUscita}}</div>
+    <button class="buttom" onclick="">Dettaglio</button>
     <div *ngIf="i!=items.length-1">-------------</div>
 
 </div>

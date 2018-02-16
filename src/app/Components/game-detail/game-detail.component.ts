@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { GameItem } from '../../gameItem';
+import { DetailGameService } from '../../Services/detail-game.service';
 
 @Component({
   selector: 'app-detail',
-  templateUrl: './game-detail.component.html',
-  styleUrls: ['./game-detail.component.css']
+  templateUrl: '../../Components/game-detail/game-detail.component.html',
 })
-export class GameDetailComponent implements OnInit {
+export class GameDetailComponent{
+  currentCharacter: GameItem;
 
-  constructor() { }
+  constructor(private comunicatorService: DetailGameService) {
 
-  ngOnInit() {
+    comunicatorService.mySubject$.subscribe( (newValue: GameItem) => {
+
+      this.currentCharacter = newValue;
+
+    });
+
   }
-
 }

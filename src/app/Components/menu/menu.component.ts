@@ -14,7 +14,6 @@ export class MenuComponent implements OnInit {
   menuItems: MenuItem[] = [
     new MenuItem(MenuEnum.Home, 'Home', true),
     new MenuItem(MenuEnum.List, 'Lista'),
-    new MenuItem(MenuEnum.Detail, 'Dettaglio'),
     new MenuItem(MenuEnum.Edit, 'Modifica')
   ];
   constructor(private menuService: MenuService) {}

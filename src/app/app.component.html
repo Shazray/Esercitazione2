@@ -1,6 +1,6 @@
 <app-menu></app-menu>
 <div [ngSwitch]="currentSection">
     <app-home *ngSwitchCase="'home'"></app-home>
-    <app-list *ngSwitchCase="'list'"></app-list>
-    <app-detail *ngSwitchCase="'detail'"></app-detail>
+    <app-list *ngSwitchCase="'list'" (selectedItem)="showData($event)"></app-list>
+    <app-detail *ngSwitchCase="'dettaglio'" [IdSelected]="gameSelected"></app-detail>
 </div>

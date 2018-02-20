@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { GameItem } from '../../gameItem';
 import { DetailGameService } from '../../Services/detail-game.service';
 import { ListGameService } from '../../Services/list.game.service';
@@ -13,18 +13,25 @@ export class GameListComponent {
   @Input()
   items: GameItem[] = [];
 
-  constructor(private comunicatorService: DetailGameService) {
-    let lista: ListGameService = new ListGameService();
-    this.items = lista.getGameItemList();
-  }
-  ngOnInit() {
-    this.items.push(new GameItem());
+  @Output()
+  selectedItem: EventEmitter<string> = new EventEmitter();
+
+  constructor(private listGame: ListGameService, private comunicatorService: DetailGameService) {
+
+    this.items = listGame.getGameItemList();
   }
 
-  selectItem(item: GameItem) {
-    // chiamo il net nel subject
-    this.comunicatorService.changeSubject(item);
+  ngOnInit() {
+    //this.items.push(new GameItem());
   }
+
+  
+  showData(item: GameItem) {
+    this.selectedItem.emit(item.id);
+}
+
+  
+
 }
 
 

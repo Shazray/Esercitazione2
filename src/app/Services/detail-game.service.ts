@@ -10,7 +10,9 @@ export class DetailGameService {
   public mySubject$ = this.mySubject.asObservable();
     
   changeSubject(value: GameItem)
-   { 
+    { 
      this.mySubject.next(value);
     }
+
+
 }

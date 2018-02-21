@@ -11,12 +11,12 @@ export class GameDetailComponent{
 
   @Input()
   IdSelected: string;
-  currentGame: GameItem;
+  currentGame1: GameItem;
 
   constructor(private listService: ListGameService) {
   }
 
   ngOnInit() {
-    this.currentGame = this.listService.getGameById(this.IdSelected);
+    this.currentGame1 = this.listService.getGameById(this.IdSelected);
   }
 }

@@ -22,6 +22,7 @@ export class ListGameService{
             {
                 return item;
             }
+            return null;
         }
 ;    }
 

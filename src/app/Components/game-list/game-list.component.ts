@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { GameItem } from '../../gameItem';
 import { DetailGameService } from '../../Services/detail-game.service';
 import { ListGameService } from '../../Services/list.game.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -16,18 +17,17 @@ export class GameListComponent {
   @Output()
   selectedItem: EventEmitter<string> = new EventEmitter();
 
-  constructor(private listGame: ListGameService, private comunicatorService: DetailGameService) {
+  constructor(private router: Router, private listGame: ListGameService, private comunicatorService: DetailGameService) {
 
-    this.items = listGame.getGameItemList();
   }
 
   ngOnInit() {
-    //this.items.push(new GameItem());
+    this.items = this.listGame.getGameItemList();
   }
 
   
   showData(item: GameItem) {
-    this.selectedItem.emit(item.id);
+    this.router.navigate(['/detail/'+item.id]);
 }
 
   

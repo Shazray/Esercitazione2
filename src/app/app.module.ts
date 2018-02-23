@@ -6,12 +6,13 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { GameListComponent } from './Components/game-list/game-list.component';
 import { GameDetailComponent } from './Components/game-detail/game-detail.component';
-import { HomeComponentComponent } from './Components/home-component/home-component.component';
 import { MenuComponent } from './Components/menu/menu.component';
 import { MenuService } from './Services/menu.service';
 import { ListGameService } from './Services/list.game.service';
 import { EditGameComponent } from './Components/edit-game/edit-game.component';
 import { DetailGameService } from './Services/detail-game.service';
+import { DemoRoutingModule } from './Components/router/router.module';
+import { HomeComponent } from './Components/home/home-component.component';
 
 
 @NgModule({
@@ -19,13 +20,14 @@ import { DetailGameService } from './Services/detail-game.service';
     AppComponent,
     GameListComponent,
     GameDetailComponent,
-    HomeComponentComponent,
+    HomeComponent,
     MenuComponent,
     EditGameComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    DemoRoutingModule
   ],
   providers: [MenuService, ListGameService, DetailGameService],
   bootstrap: [AppComponent]

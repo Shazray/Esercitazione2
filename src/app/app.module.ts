@@ -13,6 +13,8 @@ import { EditGameComponent } from './Components/edit-game/edit-game.component';
 import { DetailGameService } from './Services/detail-game.service';
 import { DemoRoutingModule } from './Components/router/router.module';
 import { HomeComponent } from './Components/home/home-component.component';
+import { LoginComponent } from './Components/login/login.component';
+import { LoginService } from './Services/login.service';
 
 
 @NgModule({
@@ -22,14 +24,15 @@ import { HomeComponent } from './Components/home/home-component.component';
     GameDetailComponent,
     HomeComponent,
     MenuComponent,
-    EditGameComponent
+    EditGameComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     DemoRoutingModule
   ],
-  providers: [MenuService, ListGameService, DetailGameService],
+  providers: [MenuService, ListGameService, DetailGameService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

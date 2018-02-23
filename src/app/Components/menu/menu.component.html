@@ -1,4 +1,3 @@
 <div class="header">
-    <div routerLink="/home" (click)="selectSection(item.id)" [class.selected]="item.selected">Home</div>
-    <div routerLink="/app-list" (click)="selectSection(item.id)" [class.selected]="item.selected">List</div>
+    <div *ngFor="let item of menuItems" routerLink="{{item.url}}" (click)="selectSection(item.id)" [class.selected]="item.selected">{{item.description}}</div>
 </div>

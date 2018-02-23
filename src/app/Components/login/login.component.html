@@ -1,0 +1,13 @@
+<div>
+    <form class=box method="POST">
+        <div>
+            <h2>
+                Form login!
+            </h2>
+        </div>
+        <input type="text" name="name" id="username" class="input" placeholder="Username" [(ngModel)]="username">
+        <input type="password" name="psw" id="pass" class="input" placeholder="Password" [(ngModel)]="password">
+        <br>
+        <button name=" send " class="btn" (click)="login()">Login</button>
+    </form>
+</div>

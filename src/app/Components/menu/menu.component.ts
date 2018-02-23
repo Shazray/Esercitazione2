@@ -10,12 +10,13 @@ import { MenuEnum } from '../../menuEnum';
 })
 
 export class MenuComponent implements OnInit {
-
   menuItems: MenuItem[] = [
-    new MenuItem(MenuEnum.Home, 'Home', true),
-    new MenuItem(MenuEnum.List, 'Lista'),
-    new MenuItem(MenuEnum.Edit, 'Modifica')
+    new MenuItem(MenuEnum.Home, 'Home', "/home", true),
+    new MenuItem(MenuEnum.List, 'Lista', "/app-list"),
+    new MenuItem(MenuEnum.Edit, 'Modifica', "/app-edit")
   ];
+
+
   constructor(private menuService: MenuService) {}
 
   ngOnInit() {

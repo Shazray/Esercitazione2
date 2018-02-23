@@ -22,9 +22,9 @@ export class ListGameService{
             {
                 return item;
             }
-            return null;
         }
-;    }
+        return null;
+   }
 
     
 

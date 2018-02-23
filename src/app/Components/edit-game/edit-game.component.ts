@@ -3,7 +3,7 @@ import { GameItem } from '../../gameItem';
 import { DetailGameService } from '../../Services/detail-game.service';
 
 @Component({
-  selector: 'app-edit-game',
+  selector: 'app-edit',
   templateUrl: './edit-game.component.html',
   styleUrls: ['./edit-game.component.css']
 })

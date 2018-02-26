@@ -9,9 +9,7 @@ import { LoginService } from '../../Services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router, private loginService: LoginService) { 
-
-  }
+  constructor(private router: Router, private loginService: LoginService) {}
 
 
   username: string;

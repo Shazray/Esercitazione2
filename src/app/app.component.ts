@@ -26,7 +26,8 @@ export class AppComponent {
     });
     
     this.loginService.sectionSelected$.subscribe(logged =>{
-      this.logged = logged; // prima del ? c'è l'if dopo c'è la condizione di true...dopo i : c'è l'else
+      this.logged = logged;
+     // prima del ? c'è l'if dopo c'è la condizione di true...dopo i due punti c'è l'else
     })
 
   }

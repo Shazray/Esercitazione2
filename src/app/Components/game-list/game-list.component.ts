@@ -5,7 +5,7 @@ import { ListGameService } from '../../Services/list.game.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-list',
+  selector: 'list',
   templateUrl: '../../Components/game-list/game-list.component.html',
   styleUrls: ['../../Components//game-list/game-list.component.css']
 })

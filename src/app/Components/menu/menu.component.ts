@@ -12,7 +12,7 @@ import { MenuEnum } from '../../menuEnum';
 export class MenuComponent implements OnInit {
   menuItems: MenuItem[] = [
     new MenuItem(MenuEnum.Home, 'Home', "/home", true),
-    new MenuItem(MenuEnum.List, 'Lista', "/app-list"),
+    new MenuItem(MenuEnum.List, 'Lista', "/list"),
     new MenuItem(MenuEnum.Edit, 'Modifica', "/app-edit")
   ];
 

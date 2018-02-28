@@ -16,6 +16,7 @@ import { HomeComponent } from './Components/home/home-component.component';
 import { LoginComponent } from './Components/login/login.component';
 import { LoginService } from './Services/login.service';
 import { AuthGuard } from './Services/authguard.service';
+import { LogoutComponent } from './Components/logout/logout.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AuthGuard } from './Services/authguard.service';
     HomeComponent,
     MenuComponent,
     EditGameComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { GameDetailComponent } from "../game-detail/game-detail.component";
 import { EditGameComponent } from "../edit-game/edit-game.component";
 import { LoginComponent } from "../login/login.component";
 import { AuthGuard } from "../../Services/authguard.service";
+import { LogoutComponent } from "../logout/logout.component";
 
 
 // const adminRoutes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
     { path: "home", component: HomeComponent, canActivate: [AuthGuard] },
     { path: "list", component: GameListComponent, canActivate: [AuthGuard] },
     { path: "detail/:id", component: GameDetailComponent, canActivate: [AuthGuard] },
-    { path: "app-edit", component: EditGameComponent, canActivate: [AuthGuard] }
+    { path: "app-edit", component: EditGameComponent, canActivate: [AuthGuard] },
+    { path: "logout", component: LogoutComponent, canActivate: [AuthGuard] }
     
 ];
 

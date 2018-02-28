@@ -17,6 +17,7 @@ export class LoginService {
 
   public setLogged(): boolean {
     if (sessionStorage.getItem('username') === null) {
+      this.logged.next(false);
       return false;
     } else {
       
@@ -33,12 +34,13 @@ export class LoginService {
       this.router.navigate(['/home']);
     }
     else {
-      console.log("la mia roba");
+      alert("Inserisci i dati corretti deficente!");
     }
   }
 
   doLogout() {
     sessionStorage.removeItem('username');
+    this.logged.next(false);
     this.router.navigate(['/login']);
   }
 

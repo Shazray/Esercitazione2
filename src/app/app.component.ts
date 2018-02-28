@@ -29,7 +29,6 @@ export class AppComponent {
       this.logged = logged;
      // prima del ? c'è l'if dopo c'è la condizione di true...dopo i due punti c'è l'else
     })
-
   }
 
   currentGame(item: string){

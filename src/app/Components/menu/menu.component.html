@@ -1,4 +1,5 @@
 <div class="header">
     <div class="left">{{userSelected}}</div>
     <div *ngFor="let item of menuItems" routerLink="{{item.url}}" (click)="selectSection(item.id); gTFO()" [class.selected]="item.selected">{{item.description}}</div>
+    <div *ngIf="permission" routerLink="/edit/" routerLinkActive="selected">Modifica</div>
 </div>

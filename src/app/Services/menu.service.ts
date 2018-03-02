@@ -12,4 +12,9 @@ export class MenuService {
     this.sectionSelected.next(id);
   }
 
+
+  public setAdmin(){
+    
+  }
+
 }

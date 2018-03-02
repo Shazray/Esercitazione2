@@ -10,7 +10,7 @@ export class AuthGuard implements CanActivate {
 
     canActivate() {
 
-        if (this.loginservice.setLogged()) {
+        if (sessionStorage.getItem("user")) {
             console.log('Loggato');
             return true;
         } else {

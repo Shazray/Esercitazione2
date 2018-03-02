@@ -1,19 +1,22 @@
-export class GameItem {
+export class GameItem{
     id: string;
-    name: string;
+    nome: string;
     descrizione: string;
     genere: string;
-    rating: number;
+    rating: string;    
     prezzo: number;
-    annoUscita: number;
-    
-    constructor(id: string = "", name: string = "Game", descrizione: string = "asdiasdiasdj", genere: string = "Adventure", rating: number = 4.5, prezzo = 30, annoUscita: number= 2018) {
-        this.id =id ;
-        this.name = name; 
-        this.descrizione = descrizione;
+    annoUscita: string;
+    consoleType: string;
+
+    constructor(id: string = "", nome: string = "", descrizione: string = "", genere: string = "", rating: string = "", prezzo: number = undefined,annoUscita: string = "",consoleType: string = "PC"){
+        this.id=id;
+        this.nome=nome;
+        this.descrizione=descrizione;
         this.genere = genere;
-        this.rating = rating;
+        this.rating = rating;    
         this.prezzo = prezzo;
         this.annoUscita = annoUscita;
+        this.consoleType = consoleType;
     }
+    
 }

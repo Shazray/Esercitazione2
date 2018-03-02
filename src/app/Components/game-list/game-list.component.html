@@ -4,8 +4,9 @@
 <div *ngFor="let item of items; let i=index" class="list" (click)="showData(item)">
 
     <div>id: {{ item.id}}</div>
-    <div>name: {{ item.name}}</div>
+    <div>name: {{ item.nome}}</div>
     <div>descrizione: {{ item.descrizione}}</div>
+    <div>genere: {{ item.genere}}</div>
     <div *ngIf="i!=items.length-1">-------------</div>
 
 </div>

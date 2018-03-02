@@ -12,9 +12,9 @@ import { LoggedUser } from '../../LoggedUser';
 })
 
 export class LoginComponent implements OnInit {
- 
+
   permission: boolean = false;
-  user: User = new User("","");
+  user: User = new User("", "");
 
   constructor(private router: Router, private loginService: LoginService) {
 

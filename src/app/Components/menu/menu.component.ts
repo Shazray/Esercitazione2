@@ -23,20 +23,16 @@ export class MenuComponent implements OnInit {
   userSelected: string;
   permission: boolean = false;
 
-  constructor(private menuService: MenuService, private loginService: LoginService, private router: Router) { 
+  constructor(private menuService: MenuService, private loginService: LoginService, private router: Router) {
     this.permission = (JSON.parse(sessionStorage.getItem("user")) as LoggedUser).isAdmin;
   }
 
-  
+
 
   ngOnInit() {
 
     this.userSelected = (JSON.parse(sessionStorage.getItem("user")) as LoggedUser).username;
   }
-
-  
-    
-  
 
   selectSection(id: string) {
 
@@ -51,11 +47,10 @@ export class MenuComponent implements OnInit {
 
     this.menuService.setSelection(id);
 
-    if(id=="logout")
-    {
-      
+    if (id == "logout") {
+
       this.loginService.doLogout();
-    console.log(sessionStorage.getItem('user'));
+      console.log(sessionStorage.getItem('user'));
     }
   }
 

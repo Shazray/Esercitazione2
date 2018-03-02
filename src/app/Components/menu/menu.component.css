@@ -19,3 +19,7 @@
 .header>div.selected {
     font-size: 18px;
 }
+
+.left {
+    float: left;
+}

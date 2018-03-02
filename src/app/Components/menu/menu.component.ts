@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { MenuService } from '../../Services/menu.service';
 import { MenuItem } from '../../menuItem';
 import { MenuEnum } from '../../menuEnum';
@@ -19,19 +19,23 @@ export class MenuComponent implements OnInit {
     new MenuItem(MenuEnum.Logout, 'Logout', "/logout")
   ];
 
+  userSelected: string;
 
-  constructor(private menuService: MenuService, private loginService: LoginService, private router: Router) {}
+  constructor(private menuService: MenuService, private loginService: LoginService, private router: Router) { }
+
 
   ngOnInit() {
+
+    this.userSelected = sessionStorage.getItem('username');
   }
 
-  selectSection(id:string){
+  selectSection(id: string) {
 
     this.menuItems.forEach(item => {
-      if(id == item.id){
+      if (id == item.id) {
         item.selected = true;
       }
-      else{
+      else {
         item.selected = false;
       }
     });
@@ -39,11 +43,10 @@ export class MenuComponent implements OnInit {
     this.menuService.setSelection(id);
   }
 
-  gTFO()
-  {
+  gTFO() {
     this.loginService.doLogout();
     console.log(sessionStorage.getItem('username'));
   }
 
-  
+
 }

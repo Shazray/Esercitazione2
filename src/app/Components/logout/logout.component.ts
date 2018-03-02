@@ -10,10 +10,7 @@ export class LogoutComponent implements OnInit {
 
   constructor(private loginService: LoginService) {}
 
-  gtfo()
-  {
-    this.loginService.doLogout();
-  }
+  
 
   ngOnInit() {
   }

@@ -2,11 +2,13 @@ import { Injectable, Input, Output } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Router } from '@angular/router';
 import { User } from '../user';
+import { Admin } from '../admin';
 
 @Injectable()
 export class LoginService {
 
   user: User = new User();
+  admin: Admin = new Admin();
 
 
   constructor(private router: Router) { }
@@ -29,10 +31,19 @@ export class LoginService {
   doLogin(username, password) {
     if (username == this.user.username && password == this.user.psw) {
 
-      sessionStorage.setItem('username', username);
+      let utente = sessionStorage.setItem('username', username);
       this.logged.next(true);
       this.router.navigate(['/home']);
+      console.log(sessionStorage.getItem('username')," user");
     }
+    else if (username == this.admin.admin_username && password == this.admin.admin_psw) {
+
+      let utente = sessionStorage.setItem('username', username);
+      this.logged.next(true);
+      this.router.navigate(['/home']);
+      console.log(sessionStorage.getItem('username'), " admin");
+    }
+
     else {
       alert("Inserisci i dati corretti deficente!");
     }

@@ -31,7 +31,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
 
-    this.userSelected = sessionStorage.getItem('username');
+    this.userSelected = (JSON.parse(sessionStorage.getItem("user")) as LoggedUser).username;
   }
 
   
@@ -50,11 +50,13 @@ export class MenuComponent implements OnInit {
     });
 
     this.menuService.setSelection(id);
-  }
 
-  gTFO() {
-    this.loginService.doLogout();
-    console.log(sessionStorage.getItem('username'));
+    if(id=="logout")
+    {
+      
+      this.loginService.doLogout();
+    console.log(sessionStorage.getItem('user'));
+    }
   }
 
 

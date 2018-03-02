@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MenuService } from '../../Services/menu.service';
 import { LoginService } from '../../Services/login.service';
 import { User } from '../../user';
+import { LoggedUser } from '../../LoggedUser';
 
 @Component({
   selector: 'login',
@@ -11,10 +12,14 @@ import { User } from '../../user';
 })
 
 export class LoginComponent implements OnInit {
-
-  constructor(private router: Router, private loginService: LoginService) {}
-
+ 
+  permission: boolean = false;
   user: User = new User("","");
+
+  constructor(private router: Router, private loginService: LoginService) {
+
+  }
+
 
   ngOnInit() {
   }

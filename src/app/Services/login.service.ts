@@ -27,6 +27,7 @@ export class LoginService {
       return;
     }
     if(userToCheck.isEquals(this.user) || userToCheck.isEquals(this.admin)){
+      
       let userLogged = new LoggedUser(userToCheck.username, userToCheck.isEquals(this.admin));
       
       sessionStorage.setItem('user', JSON.stringify(userLogged));

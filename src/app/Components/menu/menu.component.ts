@@ -25,6 +25,7 @@ export class MenuComponent implements OnInit {
 
   constructor(private menuService: MenuService, private loginService: LoginService, private router: Router) {
     this.permission = (JSON.parse(sessionStorage.getItem("user")) as LoggedUser).isAdmin;
+    //trasforma una stringa in oggetto
   }
 
 

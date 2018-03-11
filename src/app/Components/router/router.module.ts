@@ -9,17 +9,6 @@ import { AuthGuard } from "../../Services/authguard.service";
 import { LogoutComponent } from "../logout/logout.component";
 
 
-// const adminRoutes: Routes = [
-// {path: 'admin', component: LoginComponent, canActivate: [AuthGuard], // questa verrà applicata solamente al primo accesso al parent path admin
-// canActivateChild: [AuthGuard], //<- questa verrà applicata sui path figli
-// children: [
-// { path: 'crises', component: ManageCrisesComponent },
-// { path: 'heroes', component: ManageHeroesComponent }
-// ],
-// }
-// ];
-
-
 const routes: Routes = [
 
     { path: "", redirectTo: "login", pathMatch: "full" },
@@ -27,7 +16,7 @@ const routes: Routes = [
     { path: "home", component: HomeComponent, canActivate: [AuthGuard] },
     { path: "list", component: GameListComponent, canActivate: [AuthGuard] },
     { path: "detail/:id", component: GameDetailComponent, canActivate: [AuthGuard] },
-    { path: "app-edit", component: EditGameComponent, canActivate: [AuthGuard] },
+    { path: "app-edit", component: EditGameComponent, resolve:[AuthGuard] },
     { path: "logout", component: LogoutComponent, canActivate: [AuthGuard] }
     
 ];

@@ -20,4 +20,24 @@ export class AuthGuard implements CanActivate {
         }
 
     }
+
+    resolve(){
+
+            if (JSON.parse(sessionStorage.getItem("user")).username == "user" ) {
+                this.router.navigate(["/home"]);
+                console.log('Loggato');
+                return true;
+            } 
+            if (JSON.parse(sessionStorage.getItem("user")).username == "admin")
+            {
+               return false;             
+            }
+                else {
+                this.router.navigate(["/login"]);
+                console.log('Non loggato');
+                return false;
+            }
+    
+        }
+    
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { GameItem } from '../../gameItem';
 import { DetailGameService } from '../../Services/detail-game.service';
 import { ListGameService } from '../../Services/list.game.service';
 import { Router } from '@angular/router';
+import { GameItem } from '../../gameItem';
 
 @Component({
   selector: 'list',

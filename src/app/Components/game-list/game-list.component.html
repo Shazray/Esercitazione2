@@ -1,12 +1,21 @@
 <div>
     <h2 style="text-align: center">Lista videogiochi</h2>
 </div>
-<div *ngFor="let item of items; let i=index" class="list" (click)="showData(item)">
+
+<select [(ngModel)]="value" (ngModelChange)="filter()">
+    <option>Tutti</option>
+    <ng-container *ngFor="let genere of generes">
+        <option>{{listGenereService.getDescriptionById(genere?.id)}}</option>
+    </ng-container>
+</select>
+
+<br>
+
+<div *ngFor="let item of itemsFiltered; let i=index" class="list" (click)="goToEdit(item)">
 
     <div>id: {{ item.id}}</div>
-    <div>name: {{ item.nome}}</div>
-    <div>descrizione: {{ item.descrizione}}</div>
-    <div>genere: {{ item.genere}}</div>
+    <div>Name: {{ item.nome}}</div>
+    <div>Genere: {{ item.genere.descrizione}}</div>
     <div *ngIf="i!=items.length-1">-------------</div>
 
 </div>

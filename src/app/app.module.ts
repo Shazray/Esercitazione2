@@ -17,6 +17,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { LoginService } from './Services/login.service';
 import { AuthGuard } from './Services/authguard.service';
 import { LogoutComponent } from './Components/logout/logout.component';
+import { ListGenereService } from './Services/list.genere.service';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import { LogoutComponent } from './Components/logout/logout.component';
     FormsModule,
     DemoRoutingModule
   ],
-  providers: [MenuService, ListGameService, DetailGameService, LoginService, AuthGuard],
+  providers: [MenuService, ListGenereService, ListGameService, DetailGameService, LoginService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -16,7 +16,8 @@ const routes: Routes = [
     { path: "home", component: HomeComponent, canActivate: [AuthGuard] },
     { path: "list", component: GameListComponent, canActivate: [AuthGuard] },
     { path: "detail/:id", component: GameDetailComponent, canActivate: [AuthGuard] },
-    { path: "app-edit", component: EditGameComponent, resolve:[AuthGuard] },
+    { path: "app-edit", component: EditGameComponent, canActivate:[AuthGuard] },
+    { path: "app-edit/:id", component: EditGameComponent, canActivate: [AuthGuard] },
     { path: "logout", component: LogoutComponent, canActivate: [AuthGuard] }
     
 ];

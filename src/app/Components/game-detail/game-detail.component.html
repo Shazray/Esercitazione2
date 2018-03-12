@@ -1,10 +1,10 @@
-<div *ngIf="currentGame1">
-    <br> id: {{currentGame1.id}}
+<div *ngIf="currentGame">
+    <br> id: {{currentGame.id}}
     <br>
-    <div>nome: {{ currentGame1.nome }}</div>
-    <div>genere: {{ currentGame1.genere.descrizione }}</div>
+    <div>nome: {{ currentGame.nome }}</div>
+    <div>genere: {{ currentGame.genere.descrizione }}</div>
     <br>
     <button routerLink="/list/">Back</button>
-    <button routerLink="/app-edit/" *ngIf="permission">Edit</button>
+    <button (click)="goToEdit()" *ngIf="permission">Edit</button>
 
 </div>

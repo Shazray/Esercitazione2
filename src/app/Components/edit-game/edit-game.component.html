@@ -1,23 +1,21 @@
 <div class="wrap">
     <div class="search">
         <input type="text" class="searchTerm" placeholder="Cosa stai cercando?" [(ngModel)]="search">
-        <button type="submit" class="searchButton"> Cerca
+        <button type="submit" class="searchButton" (click)="searchItem()"> Cerca
     </button>
     </div>
     <br>
     <br>
-    <div>
-        <form *ngIf="exist">
-            <br>
-            <div>id: <input type="text" id="id" placeholder="Modifica l'id..."></div>
-            <br>
-            <div>name:<input type="text" id="nome" placeholder="Modifica il nome..."></div>
-            <br>
-            <div>descrizione: <input type="text" id="descri" placeholder="Modifica la descrizione..."></div>
-            <br>
-            <div>genere: <input type="text" id="descri" placeholder="Modifica il genere..."></div>
-            <br>
 
-        </form>
+    <div *ngIf="exist" style="margin-top: 70px">
+        {{currentGame.id}} <br> Titolo: <input type="text" [(ngModel)]="currentGame.nome" />
+        <br> Genere: <select [(ngModel)]="currentGame.genere.descrizione">
+                <ng-container *ngFor="let genere of generes">
+                    <option>{{genere.descrizione}}</option>
+                </ng-container>
+            </select>
+        <button (click)="editItem()">Applica Modifiche</button>
     </div>
-</div>
+    <div *ngIf="error">
+        Non sai cercare!
+    </div>

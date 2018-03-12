@@ -10,11 +10,7 @@ export class ListGameService{
 
 
 
-    private items: GameItem[] = [];
-
-    
-    constructor(private listGenereService: ListGenereService){
-        this.items = [ new GameItem("01", "Quake", this.listGenereService.getGenereById("05"), "10/10 IGN", 99.99, "01/01/1999"),
+    private items: GameItem[] = [new GameItem("01", "Quake", this.listGenereService.getGenereById("05"), "10/10 IGN", 99.99, "01/01/1999"),
     new GameItem("02", "Halo", this.listGenereService.getGenereById("05"), "9/10 IGN", 99.99, "01/01/1999","XBOX"),
     new GameItem("03", "Bloodborn", this.listGenereService.getGenereById("03"), "10/10 IGN", 99.99, "01/01/1999", "PS4"),
     new GameItem("04", "CS:GO",  this.listGenereService.getGenereById("05"), "10/10 IGN", 99.99, "01/01/1999"),
@@ -33,7 +29,10 @@ export class ListGameService{
     new GameItem("17", "Sacred", this.listGenereService.getGenereById("03"), "10/10 IGN", 99.99, "01/01/1999"),
     new GameItem("18", "Sea of Thieves",  this.listGenereService.getGenereById("03"), "10/10 IGN", 99.99, "01/01/1999","XBOX"),
     new GameItem("19", "Slay the Spire", this.listGenereService.getGenereById("03"), "10/10 IGN", 99.99, "01/01/1999"),
-    new GameItem("20", "Civilization VI", this.listGenereService.getGenereById("03"), "10/10 IGN", 99.99, "01/01/1999")]
+    new GameItem("20", "Civilization VI", this.listGenereService.getGenereById("03"), "10/10 IGN", 99.99, "01/01/1999")];
+
+    
+    constructor(private listGenereService: ListGenereService){
     }
     
     getGameItemList(): GameItem[] {
@@ -60,6 +59,21 @@ export class ListGameService{
       }
     }
   }
+
+  lookingFor(cercato: string): GameItem {
+
+    for (let item of this.items) {
+        if (item.nome.toLowerCase() === cercato.toLocaleLowerCase()) {
+            let trovato = true;
+            let currentGame = this.getGameById(item.id);
+
+            return currentGame;
+        }
+    }
+    return null;
+
+
+}
 
 
     
